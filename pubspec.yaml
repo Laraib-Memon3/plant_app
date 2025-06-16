@@ -57,6 +57,7 @@ flutter:
 
 assets:
   - images/menu.png
+  - images/basket_icon.png
 
   #   - images/a_dot_ham.jpeg
 

@@ -1,7 +1,7 @@
 // ignore: file_names
 import 'dart:ui';
 
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:plant_app/Utils/colors.dart ';
@@ -45,7 +45,8 @@ class home_screen extends StatelessWidget {
       child:  SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 130,)
+            SizedBox(height: 130,),
+            Product(image: )
           ],
         ),
       ),
