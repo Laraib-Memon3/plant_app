@@ -1,5 +1,9 @@
 // ignore: file_names
+import 'dart:ui';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:plant_app/Utils/colors.dart ';
 
 // ignore: camel_case_types
@@ -8,29 +12,58 @@ class home_screen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: Stack(
         children: [
           Row(
             children: [
-              sideBar()
+              sideBar(),
+              bodyParts(size),
+              
             ],
-          )
+          ),
+          const Positioned(
+              top: 135,
+              left: 29,
+              child: Text("Plants", style:
+              TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 35),)),
+          const Positioned(
+              top: 45,
+              right: 8,
+            child:  Icon(Icons.search, color: Colors.black, size: 40,),
+              )
         ],
       ));
   }
+  Container bodyParts(Size size){
+    return Container(
+      width: size.width * 0.8,
+      color: Colors.white,
+      child:  SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(height: 130,)
+          ],
+        ),
+      ),
+    );
+  }
   
   Expanded sideBar() {
+    
     return Expanded(
       child: Container(
         color: secondaryColor,
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 8),
+              padding: const EdgeInsets.only(left: 5, top: 38),
               child: Image.network(
                 'https://cdn-icons-png.flaticon.com/128/4543/4543046.png',
-                width: 200,
+                width: 60,
                 height: 40,
               ),
             ),
@@ -45,7 +78,7 @@ class home_screen extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              height: 110,
+              height: 210,
             ),
             Padding(
               padding: const EdgeInsets.only(right: 14),
@@ -74,7 +107,7 @@ class home_screen extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              height: 30,
+              height: 40,
             ),
             const Padding(
               padding: EdgeInsets.only(left: 8),
