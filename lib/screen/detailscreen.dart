@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plant_app/Utils/colors.dart';
 
 class DetailScreen extends StatelessWidget {
   const DetailScreen({super.key});
@@ -48,7 +49,32 @@ class DetailScreen extends StatelessWidget {
                           textAlign: TextAlign.start, style: TextStyle(fontSize:32, fontWeight: FontWeight.bold, height: 1.01 ),),
                       ),
                       const SizedBox(height: 20),
-                      
+                      Padding(
+                        padding: EdgeInsets.only(left: 32),
+                        child: Stack(
+                          children: [
+                            Image.asset("assets/images/flow.jpg", width: MediaQuery.of(context).size.width,),
+                            Padding(padding: 
+                              EdgeInsets.only(
+                                top: 290
+                              ),
+                            child: Container(height: 22, width: 8, decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),
+                            color: primaryColor
+                            ), ),
+                            ),
+                            Padding(padding:
+                            EdgeInsets.only(
+                                top: 305
+                            ),
+                              child: Container(height:10 , width: 8, decoration: BoxDecoration(borderRadius: BorderRadius.circular(40),
+                                  color: Colors.pink[100]
+                              ), ),
+                            ),
+                            
+                          ],
+                        ),
+                        
+                      )
                     ],
                   ),
                 
